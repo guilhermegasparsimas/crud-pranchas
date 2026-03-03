@@ -1,5 +1,5 @@
-// import db from '../config/db.js';
-import db from '../src/config/db.js'
+import db from '../config/db.js';
+
 
 const getPrancha = async (req, res) => {
     try {
