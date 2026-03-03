@@ -1,0 +1,32 @@
+
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum CategoriaPrancha {
+  SHORTBOARD
+  LONGBOARD
+  FUNBOARD
+  FISH
+  GUN
+  SUP
+}
+
+model Prancha {
+  id          String           @id @default(uuid())
+  nome        String
+  marca       String?
+  tamanho     Float?           
+  categoria   CategoriaPrancha 
+  
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@map("pranchas") 
+}
