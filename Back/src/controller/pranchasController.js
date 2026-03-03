@@ -3,7 +3,7 @@ import db from '../config/db.js';
 
 const getPrancha = async (req, res) => {
     try {
-        const [resultado] = await db.query("SELECT id, nome, descricao, valor FROM pranchas WHERE ativo = 1");
+        const [resultado] = await db.query("SELECT id, nome, descricao, valor FROM pranchas ");
 
         if(resultado.length === 0) {
             return res.status(404).json({ message: "Nenhuma prancha encontrada" });
